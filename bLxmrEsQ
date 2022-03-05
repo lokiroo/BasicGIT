@@ -1,0 +1,22 @@
+upstream web {
+    server docker-nginx-web;
+}
+server {
+    listen 80;
+    server_name web-docker.io;
+    location / {
+        proxy_pass http://web;
+    }
+}
+
+
+upstream api {
+        server docker-nginx-api;
+}
+server {
+    listen 80;
+    server_name api-docker.io;
+    location / {
+        proxy_pass http://api;
+    }
+}
