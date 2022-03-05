@@ -22,7 +22,7 @@
 # Registers:
 
 # File marks:
-'0  2  31  ~/about.html
+'0  2  0  ~/about.html
 '1  1  0  ~/about.html
 '2  1  0  ~/.ssh/id_rsa.pub
 '3  1  21  ~/index_git.html
@@ -32,7 +32,7 @@
 '7  12  0  /home/chi.dc/dockerfile
 
 # Jumplist (newest first):
--'  2  31  ~/about.html
+-'  2  0  ~/about.html
 -'  1  0  ~/about.html
 -'  1  0  ~/.ssh/id_rsa.pub
 -'  1  21  ~/index_git.html
@@ -129,16 +129,17 @@
 -'  1  17  /home/chi.dc/example01.py
 -'  1  0  /home/chi.dc/dockerfile
 -'  1  17  /home/chi.dc/example01.py
--'  11  17  /home/chi.dc/dockerfile
 
 # History of marks within files (newest to oldest):
 
 > ~/about.html
-	"	2	31
-	^	2	32
-	.	2	31
+	"	2	0
+	^	2	0
+	.	2	0
 	+	1	21
 	+	2	31
+	+	4	0
+	+	2	0
 
 > ~/.ssh/id_rsa.pub
 	"	1	0
