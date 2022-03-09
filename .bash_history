@@ -66,3 +66,62 @@ cd /root/.git/
 ll
 git commit -m "Add 1st index_git.html file"
 exit
+docker create --name docker-nginx-api nginx
+docker create --name docker-nginx-web nginx
+docker create --name docker-nginx-ps -p 80:80 --link docker-nginx-api --link docker-nginx-web nginx
+docker ps
+docker images ls
+docker ps
+docker ps -a
+echo "docker-nginx-ps" > index.html && docker cp index.html docker-nginx-ps:/usr/share/nginx/html/index.html
+echo "docker-nginx-api" > index.html && docker cp index.html docker-nginx-api:/usr/share/nginx/html/index.html
+echo "docker-nginx-web" > index.html && docker cp index.html docker-nginx-web:/usr/share/nginx/html/index.html
+wget https://pastebin.com/raw/bLxmrEsQ
+curl https://pastebin.com/raw/bLxmrEsQ
+yum install wget -y
+wget https://pastebin.com/raw/bLxmrEsQ
+yum install mlocate
+updatedb
+locate bLxmrEsQ
+pwd
+docker cp bLxmrEsQ docker-nginx-ps:/etc/nginx/conf.d/proxy_server.conf
+docker ps -a
+docker start docker-nginx-ps
+docker docker-nginx-web
+docker start docker-nginx-web
+docker start docker-nginx-api
+docker start docker-nginx-ps
+docker exec docker-nginx-web cat /usr/share/nginx/html/index.html
+docker ps
+docker exec docker-nginx-web /bin/bash
+docker run -it docker-nginx-web
+docker exec -it docker-nginx-web /bin/bash
+docker ps
+ip addr
+docker ps
+docker exec docker-nginx-ps cat docker-nginx-ps:/etc/nginx/conf.d/proxy_server.conf
+docker cp bLxmrEsQ docker-nginx-ps:/etc/nginx/conf.d/proxy_server.conf
+docker exec docker-nginx-ps cat docker-nginx-ps:/etc/nginx/conf.d/proxy_server.conf
+docker stop docker-nginx-ps
+docker cp bLxmrEsQ docker-nginx-ps:/etc/nginx/conf.d/proxy_server.conf
+docker start docker-nginx-ps
+docker exec docker-nginx-ps cat docker-nginx-ps:/etc/nginx/conf.d/proxy_server.conf
+docker exec docker-nginx-ps cat pwd
+docker exec docker-nginx-ps cat ip route
+docker exec docker-nginx-ps pwd
+docker exec docker-nginx-ps cat /etc/nginx/
+docker exec docker-nginx-ps cat /usr/share/nginx/html/index.html
+cat bLxmrEsQ 
+docker stop docker-nginx-ps
+docker ps
+docker stop docker-nginx-web
+docker stop docker-nginx-api
+docker ps
+docker cp bLxmrEsQ docker-nginx-ps:/etc/nginx/conf.d/proxy_server.conf
+docker start docker-nginx-web
+docker start docker-nginx-api
+docker start docker-nginx-ps
+docker exec docker-nginx-ps cat /usr/share/nginx/html/index.html
+docker cp bLxmrEsQ docker-nginx-ps:/etc/nginx/conf.d/proxy_server.conf
+docker exec docker-nginx-ps cat docker-nginx-ps:/etc/nginx/conf.d/proxy_server.conf
+docker exec docker-nginx-ps cat /etc/nginx/conf.d/proxy_server.conf
