@@ -1,0 +1,53 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myapp-test
+  labels:
+    app: login
+spec:
+  selector:
+  # 2 ways
+    matchLabels:
+      app: login
+    matchExpressions: 
+    - key: app
+      operator: In #IN, NotIN, Exists, DoesNotExist
+      values:
+        - login
+  replicas: 3
+  strategy:
+    type: Recreate #strategy type is Recreate or RollingUpdate. Default is RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: login
+    spec:
+      containers:
+      - image: nginx
+        name: nginx-server
+        ports:
+          - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myapp-test
+spec:
+  type: NodePort
+  selector:
+    app: login
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30123
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-clusterip
+spec:
+  selector:
+    app: my-app # label selectors Pod redis
+  ports:
+    - port: 6379 # port of the serivce
+      targetPort: 6379 # port of the container that service will forward to 
